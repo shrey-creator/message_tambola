@@ -1,12 +1,16 @@
 const express =require('express');
 const app =express();
+var path = require('path');
 const socket=require('socket.io');
 
 app.use(express.static('join'));
 app.use(express.static('room'));
 app.use(express.static('board'));
 app.use(express.static('slip'));
-
+app.get('/sitemap', function(req, res){
+    res.contentType('application/xml');
+    res.sendFile(path.join(__dirname , 'sitemap.xml'));
+});
 var rooms=new Map();
 var passedNumber=[];
 var number=[];
