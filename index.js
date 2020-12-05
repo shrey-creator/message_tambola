@@ -7,6 +7,9 @@ app.use(express.static('join'));
 app.use(express.static('room'));
 app.use(express.static('board'));
 app.use(express.static('slip'));
+app.get('/anime', function(req, res) {
+    res.sendFile(path.join(__dirname , './anime/anime.html'));
+});
 app.get('/sitemap', function(req, res){
     res.contentType('application/xml');
     res.sendFile(path.join(__dirname , 'sitemap.xml'));

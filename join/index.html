@@ -107,6 +107,12 @@ body, html {
         
         
       }
+      function anime() {
+        
+        window.location.assign(`http://localhost:5000/anime`);
+        
+        
+      }
         </script>
 </head>
 <body>
@@ -147,27 +153,31 @@ body, html {
   
   <!-- Container (About Section) -->
   <div class="w3-content w3-container w3-padding-64" id="about">
-    <h1 class="w3-center">Rules</h1>
+    <h1 class="w3-center"><b>Rules</b></h1>
     <p class="w3-center"><em>I love tambola</em></p>
-    <p>The game begins with a ball draw. As the game progresses, the board is marked with each ball that is drawn. The objective of the game is to mark/ dab all the numbers found in the ticket as called by the dealer. The player who first mark all the numbers in a winning pattern and calls a win is declared as the WINNER of that pattern after the dealer checks his ticket and verify it with numbers drawn.
-      If your claimed winning pattern is wrong, it will be called BOGUS and you cannot continue the game with the same ticket.
-
+    <pre>The game begins with an empty board. After each tap a random number is generated between 1 to 90 .
+Find the random number in your ticket and mark/ dab all the numbers found in the ticket as called by the dealer. 
 The game ends when all 90 numbers are drawn, or when a winner is declared for all the patterns of the game, whichever comes first.
 
 In order to win in Tambola or Bingo, you need to match winning combinations. Some of the popular winning combinations in a Tambola game are:
+<b>Early Five</b> : The ticket with first five number dabbed.
+<b>Breakfast</b>:Player whose first three column are checked fastest
+<b>Lunch</b>:Player whose first middle column are checked fastest
+<b>Dinnet</b>:Player whose first last column are checked fastest
+<b>Top Line</b>: If all the numbers in the top row are checked .
+<b>Middle Line</b>: If all the numbers in the middle row are checked
+<b>Bottom Line</b>: If all the numbers in the bottom row are checked
+<b>Four Corners</b>: The ticket with all four corners marked first i.e. 1st and last numbers of top and bottom rows.
+<b>Full House</b>:Full House is the Grand prize in any Tambola game played. The ticket with all the 15 numbers marked first.
 
-Early Five : The ticket with first five number dabbed
-Top Line: The ticket with all the numbers of the top row dabbed fastest.
-Middle Line: The ticket with all the numbers of the middle row dabbed fastest.
-Bottom Line: The ticket with the numbers of the bottom row dabbed fasted.
-Four Corners: The ticket with all four corners marked first i.e. 1st and last numbers of top and bottom rows.
-Full House: The ticket with all the 15 numbers marked first.
-    </p>
+
+    </pre>
       </div>
       <div>
       <figure>
         <a href="http://urstoron.com/3UTR" target="_blank"><img class ="down" src="./download.jpg" alt=""></a>
       </figure>
+      <button class="button mt-20" type="submit" onclick="anime()">Download more anime</button>  
     </div>
       
   <!-- Footer -->
