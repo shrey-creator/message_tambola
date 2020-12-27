@@ -22,6 +22,7 @@ if(room != null)
     for(i=0;i<data.length;i++)
     {
 
+      store.push(data[i]);
       $("."+data[i]).attr('id',"pressed");
 
     }
