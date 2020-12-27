@@ -8,13 +8,33 @@
    
     <link rel="stylesheet" href="room.css">
     <script>
-        function newDoc() {
+        function host() {
+            var x =  
+                document.getElementById("hostInput").value;
+                if(x !="")
+                {
+                    x='room='+x;
+                    x=x+"&type=host"
+          window.location.assign(`https://myhousie.herokuapp.com/board.html?${x}`);
+                }
+                else{
+                    var element=document.getElementById("joinInput");
+                    element.placeholder="Room name can not be empty";
+                    element.classList.add("pressed");
+
+                }
+               
+          
+          
+        }
+        function join() {
             var x =  
                 document.getElementById("joinInput").value;
                 if(x !="")
                 {
                     x='room='+x;
-          window.location.assign(`https://www.tambola-game.com/board.html?${x}`);
+                    x=x+"&type=join";
+          window.location.assign(`https://myhousie.herokuapp.com/board.html?${x}`);
                 }
                 else{
                     var element=document.getElementById("joinInput");
@@ -33,8 +53,10 @@
         <div class="joinInnerContainer">
             <h1 class="heading">Join</h1>
            
-            <div><input type="text" placeholder="Share the room with your friends..." id="joinInput"  /></div>
-            <button class="button mt-20" type="submit" onclick="newDoc()">Create / Join room</button>
+            <div><input type="text" placeholder="Share the room with your friends..." id="hostInput"  /></div>
+            <button class="button mt-20" type="submit" onclick="host()">Host Game</button>
+            <div><input type="text" placeholder="Enter room name..." id="joinInput"  /></div>
+            <button class="button mt-20" type="submit" onclick="join()">Join game</button>
             
         </div>
         

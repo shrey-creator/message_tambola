@@ -1,28 +1,37 @@
 
 var socket=io.connect('https://myhousie.herokuapp.com/');
-var room=location.search.slice(1).split("=")[1];
+
+//https://myhousie.herokuapp.com/
+var roomname=location.search.slice(0).split("&")[0];
+var roomtype=location.search.slice(0).split("&")[1];
+var type=roomtype.split("=")[1];
+var room=roomname.split("=")[1];
+console.log(type+" "+room);
 var store=[];
 
 if(room != null)
 {
+  if(type=="host")
+  {
+    $(".tap").text("Tap Here");
+  }
   
   $(".roomName").text("Room - "+room);
-  socket.emit('join',room);
-  console.log('hey');
+  socket.emit('join',{room,type});
   socket.on('join',(data)=>{
     for(i=0;i<data.length;i++)
     {
-      console.log(data);
 
       $("."+data[i]).attr('id',"pressed");
 
     }
   });
+  if(type=="host"){
   $(".tapper").click(function(){
     randomnumber();
   
-  
   });
+}
   function randomnumber()
   {
     var ran=Math.floor(Math.random()*90+1);

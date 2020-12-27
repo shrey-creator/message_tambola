@@ -21,8 +21,9 @@ var server=app.listen((process.env.PORT || 5000),()=>{console.log("app started o
 var io=socket(server);
 io.on('connection',(socket)=>{  
     var currentRoom;
-    console.log('user connected ');
-    socket.on('join',(room)=>{
+   // console.log('user connected ');
+    socket.on('join',({room,type})=>{
+        console.log(type);
         if(!(rooms.get(room)))
         {
             rooms.set(room,1);
