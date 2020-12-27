@@ -25,6 +25,7 @@ if(room != null)
       store.push(data[i]);
       $("."+data[i]).attr('id',"pressed");
 
+      $(".no").text(90-store.length);
     }
   });
   if(type=="host"){
