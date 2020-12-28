@@ -15,12 +15,13 @@
                 {
                     x='room='+x;
                     x=x+"&type=host"
-          window.location.assign(`https://myhousie.herokuapp.com/board.html?${x}`);
+          window.location.assign(`https://www.tambola-game.com/board.html?${x}`);
                 }
                 else{
-                    var element=document.getElementById("joinInput");
+                    var element=document.getElementById("hostInput");
+                     element.classList.add("pressed");
+                    
                     element.placeholder="Room name can not be empty";
-                    element.classList.add("pressed");
 
                 }
                
@@ -29,17 +30,19 @@
         }
         function join() {
             var x =  
-                document.getElementById("joinInput").value;
+                document.getElementById("hostInput").value;
                 if(x !="")
                 {
                     x='room='+x;
                     x=x+"&type=join";
-          window.location.assign(`https://myhousie.herokuapp.com/board.html?${x}`);
+          window.location.assign(`https://www.tambola-game.com/board.html?${x}`);
                 }
                 else{
-                    var element=document.getElementById("joinInput");
+                    var element=document.getElementById("hostInput");
+                    
+                     element.classList.add("pressed");
                     element.placeholder="Room name can not be empty";
-                    element.classList.add("pressed");
+                   
 
                 }
                
@@ -51,11 +54,11 @@
 <body>
     <div class="joinOuterContainer">
         <div class="joinInnerContainer">
-            <h1 class="heading">Join</h1>
+            <h2 class="heading">Join/Create Room</h1>
            
-            <div><input type="text" placeholder="Share the room with your friends..." id="hostInput"  /></div>
-            <button class="button mt-20" type="submit" onclick="host()">Host Game</button>
-            <div><input type="text" placeholder="Enter room name..." id="joinInput"  /></div>
+            <div><input type="text" placeholder="Enter room name...." id="hostInput"  /></div>
+            <button class="button mt-20 inli" type="submit" onclick="host()">Host Game</button>
+            <!-- <div><input type="text" placeholder="Enter room name..." id="joinInput"  /></div> -->
             <button class="button mt-20" type="submit" onclick="join()">Join game</button>
             
         </div>

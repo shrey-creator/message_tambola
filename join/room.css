@@ -4,11 +4,12 @@ body {
   padding: 0;
   margin: 0;
   /* background-color: #1a1a1d; */
-  background-image: url("tr.jpg");
+  background-image: url("tr.png");
   background-repeat: no-repeat;
   background-size: cover;
 
 }
+
 
 #root {
   height: 100vh;
@@ -35,33 +36,40 @@ h1{
 }
 
 #joinInput {
-  border-radius: 0;
+  border-radius: 50px;
+  border: 3px solid red;
+
   padding: 15px 20px;
   width: 100%;
 }
 #hostInput {
-  border-radius: 0;
+  border-radius: 50px;
+  border: 3px solid blue;
+  font-size: larger;
   padding: 15px 20px;
   width: 100%;
 }
 .heading {
   color: black;
-  font-size: 2.5em;
+  font-size: 2em;
   padding-bottom: 10px;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid lightblue;
 }
 
 .button {
   color: #fff !important;
+  font-size: large  ;
   text-transform: uppercase;
   text-decoration: none;
-  background: #2979ff;
+  background: black;
   padding: 20px;
   border-radius: 5px;
   display: inline-block;
   border: none;
-  width: 100%;
-  margin-bottom: 20px;
+  margin: 0px;
+  width: 40%;
+ 
+ 
 }
 
 .mt-20 {
@@ -72,6 +80,7 @@ h1{
   body{
     background-repeat: no-repeat;
   background-size: 500px 1000px;
+  background-image: url("tr1.jpg");
 
   }
   .joinOuterContainer {
@@ -93,6 +102,12 @@ button:focus {
   text-align: center;
   margin: 10px;
 }
-.pressed{
-  border: 2px solid red;
+#pressed{
+
+  border-radius: 50px;
+  border: 3px solid red;
+
+  padding: 15px 20px;
+  width: 100%;
+  
 }
