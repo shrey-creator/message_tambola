@@ -1,4 +1,3 @@
-
 var socket=io.connect('https://myhousie.herokuapp.com/');
 
 //https://myhousie.herokuapp.com/
