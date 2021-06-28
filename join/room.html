@@ -11,11 +11,15 @@
         function host() {
             var x =  
                 document.getElementById("hostInput").value;
+            var name =  
+                document.getElementById("nameInput").value;
+                x=x.toLowerCase();
                 if(x !="")
                 {
                     x='room='+x;
+                    x=x+"_name="+name;
                     x=x+"&type=host"
-          window.location.assign(`https://myhousie.herokuapp.com/board.html?${x}`);
+          window.location.assign(`http://localhost:5000/board.html?${x}`);
                 }
                 else{
                     var element=document.getElementById("hostInput");
@@ -31,11 +35,15 @@
         function join() {
             var x =  
                 document.getElementById("hostInput").value;
+            var name =  
+                document.getElementById("nameInput").value;
+                x=x.toLowerCase();
                 if(x !="")
                 {
                     x='room='+x;
+                    x=x+"_name="+name;
                     x=x+"&type=join";
-          window.location.assign(`https://myhousie.herokuapp.com/board.html?${x}`);
+          window.location.assign(`http://localhost:5000/board.html?${x}`);
                 }
                 else{
                     var element=document.getElementById("hostInput");
@@ -55,8 +63,9 @@
     <div class="joinOuterContainer">
         <div class="joinInnerContainer">
             <h2 class="heading">Join/Create Room</h1>
-           
+          <div><input type="text" placeholder="Enter your name...." id="nameInput"  /></div>
             <div><input type="text" placeholder="Enter room name...." id="hostInput"  /></div>
+            
             <button class="button mt-20 inli" type="submit" onclick="host()">Host Game</button>
             <!-- <div><input type="text" placeholder="Enter room name..." id="joinInput"  /></div> -->
             <button class="button mt-20" type="submit" onclick="join()">Join game</button>

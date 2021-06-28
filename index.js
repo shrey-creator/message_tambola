@@ -7,9 +7,10 @@ app.use(express.static('join'));
 app.use(express.static('room'));
 app.use(express.static('board'));
 app.use(express.static('slip'));
-app.get('/anime', function(req, res) {
-    res.sendFile(path.join(__dirname , './anime/anime.html'));
-});
+app.use(express.static('chat'));
+// app.get('/chat', function(req, res) {
+//     res.sendFile(path.join(__dirname , './chat/chat.html'));
+// });
 app.get('/sitemap', function(req, res){
     res.contentType('application/xml');
     res.sendFile(path.join(__dirname , 'sitemap.xml'));
@@ -21,7 +22,8 @@ var server=app.listen((process.env.PORT || 5000),()=>{console.log("app started o
 var io=socket(server);
 io.on('connection',(socket)=>{  
     var currentRoom;
-   // console.log('user connected ');
+   console.log('user connected ');
+
     socket.on('join',({room,type})=>{
         console.log(type);
         if(!(rooms.get(room)))
@@ -47,12 +49,27 @@ io.on('connection',(socket)=>{
        socket.emit('join',passedNumber);
 
     });
+    
+
     socket.on('number',(data)=>{
         number.push(data);
         
     
         io.to(data.room).emit('number',data);
     });
+
+
+    socket.on('chat', function(data){
+        // console.log(data);
+        io.sockets.emit('chat', data);
+    });
+
+    // Handle typing event
+    socket.on('typing', function(data){
+        socket.broadcast.emit('typing', data);
+    });
+
+
     socket.on('disconnect', () => {
          usersLeft=rooms.get(currentRoom);
          if(usersLeft-1==0)

@@ -1,19 +1,21 @@
-var socket=io.connect('https://myhousie.herokuapp.com/');
 
 //https://myhousie.herokuapp.com/
 var roomname=location.search.slice(0).split("&")[0];
 var roomtype=location.search.slice(0).split("&")[1];
-console.log(roomtype);
 if(roomtype)
 {
+  var personname=roomname.split("_")[1];
+   roomname=roomname.split("_")[0];
+   var name=personname.split("=")[1];
 var type=roomtype.split("=")[1];
 var room=roomname.split("=")[1];
 }
-console.log(type+" "+room);
+console.log(type+" "+room+" "+name);
 var store=[];
 /*                                            For room joining                                                              */
 if(roomtype != null)
 {
+  var socket=io.connect('http://localhost:5000');
   if(type=="join")
   {
     $(".tap").text("");

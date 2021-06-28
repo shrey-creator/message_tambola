@@ -49,6 +49,13 @@ h1{
   padding: 15px 20px;
   width: 100%;
 }
+#nameInput {
+  border-radius: 50px;
+  border: 3px solid blue;
+  font-size: larger;
+  padding: 15px 20px;
+  width: 100%;
+}
 .heading {
   color: black;
   font-size: 2em;
