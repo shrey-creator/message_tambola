@@ -56,7 +56,7 @@ btn.addEventListener('click', function(){
 socket.on('chat', function(data){
     if(data.message.indexOf("base64") !== -1)
     {
-      output.innerHTML += '<p><strong>' + data.handle + ': </strong>' + `<img src='${data.message}' class = "img-fluid">` + '</p>';
+      output.innerHTML += '<p><strong>' + data.handle + ': </strong>' + `<img src='${data.message}' class = "img-fluid" width="200" height="200">` + '</p>';
 
     }
     else{
