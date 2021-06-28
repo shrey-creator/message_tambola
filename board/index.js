@@ -22,7 +22,10 @@ if(roomtype != null)
   var message = document.getElementById('message'),
       btn = document.getElementById('send'),
       output = document.getElementById('output');
-
+  function ChooseImage()
+  {
+    document.getElementById('imageFile').click();
+  }
       function readURL(event) {
           var file= event.files[0];
          var reader = new FileReader();

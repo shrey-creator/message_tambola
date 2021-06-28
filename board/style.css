@@ -104,20 +104,43 @@ label{
   display: block;
   padding: 10px 20px;
 }
+.input-icons i {
+  position: absolute;
+}
 
-#handle,#message{
-  padding: 10px 20px;
-  box-sizing: border-box;
+.input-icons {
+  width: 90%;
+  
+} 
+.material-icons {
+  padding: 10px;
+            min-width: 40px;
+}
+
+#message {
+  width: 100%;
+            padding: 10px;
+            text-align: center;
+}
+/* #message{
+  
+  height: 100%;
   background: #eee;
   border: 0;
-  display: block;
-  width: 100%;
+  width: 90%;
   background: #fff;
   border-bottom: 1px solid #eee;
   font-family: Nunito;
   font-size: 16px;
 }
-
+.material-icons
+{
+  align-items:flex-end;
+}
+#sendmessage{
+  border: 1px solid black;
+  display: inline;  
+} */
 #send{
   background: #575ed8;
   color: #fff;
@@ -219,6 +242,7 @@ text-align: center;
     border-radius: 0px;
     font-weight: 800;
   }
+  
   .count,.no,.prev
   {
     font-size: 20px;
