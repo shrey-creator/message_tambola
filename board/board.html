@@ -10,8 +10,6 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="style.css">
-
-
   </head>
   <body>
     <p class="roomName"></p>
@@ -155,19 +153,23 @@
     
       <input class="btn info" type="submit" value="Generate Slip" onclick=" window.open('/slip.html','_blank')" />
  
-       <br>
+       <!-- <br>
       <input class="btn info" type="submit" value="Chat" onclick=" window.open('/chat.html','_blank')" />
            
-      <br> 
+      <br>  -->
       <div id="mario-chat">
         <h2>Tambola Chat</h2>
         <div id="chat-window">
             <div id="output"></div>
+            <img id="blah"  />
+            
         </div>
+        <!-- <input id="handle" type="text" placeholder="Handler" /> -->
         <input id="message" type="text" placeholder="Message" />
         <button id="send">Send</button>
     </div>
-
+    <input type='file' id="imageFile" onchange="readURL(this);" />
+    
         <br>
         <br>
         <br>
@@ -181,5 +183,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- <script src="join.js"></script> -->
     <script src="index.js" charset="utf-8"></script>
+    
   </body>
+  
 </html>

@@ -15,7 +15,66 @@ var store=[];
 /*                                            For room joining                                                              */
 if(roomtype != null)
 {
-  var socket=io.connect('http://localhost:5000');
+  var socket=io.connect('https://myhousie.herokuapp.com/');
+
+
+
+  var message = document.getElementById('message'),
+      btn = document.getElementById('send'),
+      output = document.getElementById('output');
+
+      function readURL(event) {
+          var file= event.files[0];
+         var reader = new FileReader();
+         reader.addEventListener("load",function(){
+          socket.emit('chat', {
+            message: reader.result,
+            handle: name,
+            roomna : room 
+        });
+        
+         },false);
+        if(file)
+        {  
+          reader.readAsDataURL(file);
+        }
+      }
+
+
+
+
+btn.addEventListener('click', function(){
+  socket.emit('chat', {
+      message: message.value,
+      handle: name,
+      roomna : room 
+  });
+  message.value = "";
+});
+
+// Listen for events
+socket.on('chat', function(data){
+    if(data.message.indexOf("base64") !== -1)
+    {
+      output.innerHTML += '<p><strong>' + data.handle + ': </strong>' + `<img src='${data.message}' class = "img-fluid">` + '</p>';
+
+    }
+    else{
+    output.innerHTML += '<p><strong>' + data.handle + ': </strong>' + data.message + '</p>';
+    }
+});
+message.addEventListener('keypress', function(){
+  socket.emit('typing', name);
+})
+
+
+// socket.on('typing', function(data){
+//   feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>';
+// });
+
+
+
+
   if(type=="join")
   {
     $(".tap").text("");
@@ -87,6 +146,10 @@ else if(store.length>90)
 
 /*                                                        to start game directly                   */
 else{
+  var x = document.getElementById("mario-chat");
+  x.style.display = "none";
+  var y = document.getElementById("imageFile");
+  y.style.display = "none";
   if(store.length<90)
   {
   $(".tapper").click(function(){

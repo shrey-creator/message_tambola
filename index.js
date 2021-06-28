@@ -60,14 +60,15 @@ io.on('connection',(socket)=>{
 
 
     socket.on('chat', function(data){
-        // console.log(data);
-        io.sockets.emit('chat', data);
+        // console.log(data.message);
+        io.to(data.roomna).emit('chat', data);
     });
 
     // Handle typing event
-    socket.on('typing', function(data){
-        socket.broadcast.emit('typing', data);
-    });
+    // socket.on('image',function(imageName){
+    //     console.log(imageName);
+    //     io.to(data.roomna).emit('chat', data);
+    // })
 
 
     socket.on('disconnect', () => {
